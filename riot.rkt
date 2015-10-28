@@ -9,7 +9,7 @@
  
 ; graphical constants 
 (define BACKGROUND (empty-scene WIDTH HEIGHT))
-(define SHOT (triangle 3 "solid" "red"))
+(define BALLOON (circle 3 "solid" "red"))
  
 ; A ShotWorld is List-of-numbers. 
 ; interpretation the collection of shots fired and moving straight up
@@ -40,4 +40,4 @@
 (define (to-image w)
   (cond
     [(empty? w) BACKGROUND]
-    [else (place-image SHOT XSHOTS (first w) (to-image (rest w)))]))
+    [else (place-image BALLOON XSHOTS (first w) (to-image (rest w)))]))

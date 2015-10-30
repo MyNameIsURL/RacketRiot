@@ -39,5 +39,13 @@
 ; adds each y on w at (MID,y) to the background image 
 (define (to-image w)
   (cond
-    [(empty? w) BACKGROUND]
+    [(empty? w)
+     BACKGROUND (draw-columns)]
     [else (place-image BALLOON XSHOTS (first w) (to-image (rest w)))]))
+
+; Draw columns
+(define (draw-columns)
+  (place-image
+   (line 30 30 "black")
+   24 24
+   BACKGROUND))

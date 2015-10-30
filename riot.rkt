@@ -45,7 +45,4 @@
 
 ; Draw columns
 (define (draw-columns)
-  (place-image
-   (line 30 30 "black")
-   24 24
-   BACKGROUND))
+  (add-line BACKGROUND 10 0 10 180 "black"))

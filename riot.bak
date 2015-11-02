@@ -32,7 +32,7 @@
   (define randomY (random (/ HEIGHT 10)))
   (cond
     [(empty? w) '()]
-    [else (place-image/align BALLOON (* 10 randomX) (* 10 randomY) "center" "center" BACKGROUND)]))
+    [else (place-image/align BALLOON (* 10 randomX) (* 10 randomY) "center" "center")]))
  
 ; ShotWorld KeyEvent -> ShotWorld 
 ; adds a shot to the world if the space bar was hit 

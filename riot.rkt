@@ -10,10 +10,6 @@
 ; graphical constants 
 (define BACKGROUND (empty-scene WIDTH HEIGHT))
 (define BALLOON (circle 3 "solid" "red"))
-
-; Random values
-(define randomX (random (/ WIDTH 10)))
-(define randomY (random (/ HEIGHT 10)))
  
 ; A ShotWorld is List-of-numbers. 
 ; interpretation the collection of shots fired and moving straight up
@@ -32,12 +28,14 @@
 ;    [(empty? w) '()]
 ;    [else (cons (sub1 (first w)) (tock (rest w)))]))
 (define (tock w)
+  (define randomX (random (/ WIDTH 10)))
+  (define randomY (random (/ HEIGHT 10)))
   (cond
     [(empty? w) '()]
     [else (place-image/align BALLOON (* 10 randomX) (* 10 randomY) "center" "center" BACKGROUND)]))
  
 ; ShotWorld KeyEvent -> ShotWorld 
-; adds a balloon to the world if the space bar was hit 
+; adds a shot to the world if the space bar was hit 
 (define (keyh w ke)
   (cond
     [(key=? ke " ") (cons HEIGHT w)]
